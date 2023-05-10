@@ -1,0 +1,29 @@
+.List {
+    width: 50%;
+}
+
+.List h1{
+    font-size: 4rem;
+}
+
+.List p {
+    font-size: 1.2rem;
+}
+
+
+
+/* Search form styles */
+.Search-Form label{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.Search-Form{
+    margin-bottom: 10px;
+}
+
+.Search-Form p{
+    margin-left: 5px;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.75);
+}

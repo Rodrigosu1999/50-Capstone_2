@@ -1,0 +1,59 @@
+.User{
+    margin: 0;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .User-countries{
+    margin: 0;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .User-username{
+    font-size: 3rem;
+    margin: 15px 0;
+  }
+ 
+  .User-username-data{
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 15px 0;
+    font-style: oblique;
+  }
+
+  .User-info{
+    font-size: 2rem;
+    margin: 5px 0;
+  }
+ 
+  .User-info-data{
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 5px 0;
+  }
+
+  .User-countries-table{
+    background-color: rgba(240, 248, 255, 0.652);
+    margin: 10px 0;
+  }
+
+  .User-countries-td, .User-countries-th, td{
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .User-countries-th{
+    font-size: 2.5rem;
+  }
+  .User-countries-td{
+    font-size: 2rem;
+  }
+
+  .User-countries-flag{
+    width: 200px;
+  }
