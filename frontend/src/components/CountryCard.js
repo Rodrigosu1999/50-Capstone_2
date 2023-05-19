@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import ItemsContext from "./ItemsContext";
 
-//Individual company card when displaying the company list
+//Individual country card when displaying the country list
 function CountryCard({ country }) {
   const history = useHistory();
   const { getCountry } = useContext(ItemsContext);

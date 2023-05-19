@@ -5,7 +5,7 @@ import CountryCarousel from "./CountryCarousel";
 import CountryInfo from "./CountryInfo";
 import "../styles/Country.css";
 
-//Company details, displaying the Company and all their available jobs
+//Country details, displaying the Country with all their available information
 function Country() {
   const { currUser, country, addCountry, removeCountry, isLoading } = useContext(ItemsContext);
 

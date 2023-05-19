@@ -28,7 +28,7 @@ function Home() {
         :
         <>
           <h1 className="font-weight-bold">
-             Welcome to Restful Countries {`${currUser.firstName} ${currUser.lastName}`}!
+             Welcome to Culture Quests {`${currUser.firstName} ${currUser.lastName}`}!
           </h1>
           <h2>{continent}</h2>
           <div className="card-container">

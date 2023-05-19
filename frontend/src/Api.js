@@ -10,7 +10,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
  *
  */
 
-class JoblyApi {
+class CountriesApi {
   // the token for interactive with the API will be stored here.
   static token;
 
@@ -20,7 +20,7 @@ class JoblyApi {
     //there are multiple ways to pass an authorization token, this is how you pass it in the header.
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
-    const headers = { Authorization: `Bearer ${JoblyApi.token}`};
+    const headers = { Authorization: `Bearer ${CountriesApi.token}`};
     const params = (method === "get")
         ? data
         : {};
@@ -61,8 +61,6 @@ class JoblyApi {
     }
   }
 
-  // Individual API routes
-
   /** Get all countries by continent.  */
 
   static async getCountriesByContinent(continent) {
@@ -73,7 +71,7 @@ class JoblyApi {
       console.error("API Error:", err.response);
     }
   }
-  /** Get all countries by continent.  */
+  /** Get all countries by subregion (North America, Eastern Europe, etc.).  */
 
   static async getCountriesBySubregion(subregion) {
     try {
@@ -84,7 +82,7 @@ class JoblyApi {
     }
   }
   
-  /** Get details on a company by handle. */
+  /** Get details on a particular country by name. */
 
   static async getCountry(name) {
     try {
@@ -129,7 +127,7 @@ class JoblyApi {
   static async login(username, password) {
     try {
       let res = await this.request(`auth/token/`, {username, password}, "post");
-      JoblyApi.token = res.token;
+      CountriesApi.token = res.token;
       return res.token;
     } catch (err) {
       return false
@@ -141,7 +139,7 @@ class JoblyApi {
   static async register(username, password, firstName, lastName, email) {
     try {
       let res = await this.request(`auth/register/`, {username, password, firstName, lastName, email}, "post");
-      JoblyApi.token = res.token;
+      CountriesApi.token = res.token;
       return res.token;
     } catch (err) {
       return false
@@ -159,16 +157,15 @@ class JoblyApi {
     }
   }
   
-  
   /** Logout */
 
   static async logout() {
     try {
-      JoblyApi.token = false
+      CountriesApi.token = false
     } catch (err) {
       console.error("API Error:", err.response);
     }
   }
 }
 
-    export default JoblyApi;
+    export default CountriesApi;

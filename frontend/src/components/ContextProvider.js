@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Redirect } from "react-router-dom";
 import ItemsContext from "./ItemsContext";
-import JoblyApi from "../Api";
+import CountriesApi from "../Api";
 import useLocalStorageState from "../hooks/useLocalStorageState"
 
 //Context Provider for the App for features used in most of the App
@@ -17,14 +16,13 @@ const ContextProvider = ({children}) => {
 
   useEffect(() => {
     getCountries()
-    JoblyApi.token = token;
+    CountriesApi.token = token;
   }, []);
 
   // get call from all countries
   async function getCountries() {
     setIsLoading(true);
-    let countries = await JoblyApi.getCountries();
-    console.log(countries);
+    let countries = await CountriesApi.getCountries();
     setCountries(countries);
     setContinent("World")
     setCountryFound(true);
@@ -35,8 +33,7 @@ const ContextProvider = ({children}) => {
   async function getCountriesFiltered(name) {
     try {
       setIsLoading(true);
-      let countries = await JoblyApi.getCountriesFiltered(name);
-      console.log(countries);
+      let countries = await CountriesApi.getCountriesFiltered(name);
       setCountries(countries);
       setContinent(`Filtered countries by: ${name}`)
       setCountryFound(true);
@@ -50,7 +47,7 @@ const ContextProvider = ({children}) => {
   // get call from a particular country
   async function getCountry(name) {
     setIsLoading(true);
-    let country = await JoblyApi.getCountry(name);
+    let country = await CountriesApi.getCountry(name);
     setCountry(country);
     setCountryFound(true);
     setIsLoading(false);
@@ -59,7 +56,7 @@ const ContextProvider = ({children}) => {
   // get call from countries per continent
   async function getCountriesByContinent(continent) {
     setIsLoading(true);
-    let countries = await JoblyApi.getCountriesByContinent(continent);
+    let countries = await CountriesApi.getCountriesByContinent(continent);
     let str2 = continent.charAt(0).toUpperCase() + continent.slice(1);
     setCountries(countries);
     setContinent(str2);
@@ -69,7 +66,7 @@ const ContextProvider = ({children}) => {
   // get call from countries by subregion
   async function getCountriesBySubregion(region) {
     setIsLoading(true);
-    let countries = await JoblyApi.getCountriesBySubregion(region);
+    let countries = await CountriesApi.getCountriesBySubregion(region);
     let str2 = region.charAt(0).toUpperCase() + region.slice(1);
     setCountries(countries);
     setContinent(str2);
@@ -82,23 +79,23 @@ const ContextProvider = ({children}) => {
     const currUserCountries = currUser.countries;
     let res = [];
     for (const country of currUserCountries) {
-      res.push(await JoblyApi.getCountry(country));
+      res.push(await CountriesApi.getCountry(country));
     }
     setCurrUserCountries(res);
   }
 
   // post call to add country to a user
   async function addCountry(username, name) {
-    const res = await JoblyApi.addCountry(username, name)
-    let user = await JoblyApi.getInfo(username);
+    const res = await CountriesApi.addCountry(username, name)
+    let user = await CountriesApi.getInfo(username);
     setCurrUser(user);
     await getCurrUserCountries(user);
   }
   
   // post call to remove country to a user
   async function removeCountry(username, name) {
-    const res = await JoblyApi.removeCountry(username, name)
-    let user = await JoblyApi.getInfo(username);
+    const res = await CountriesApi.removeCountry(username, name)
+    let user = await CountriesApi.getInfo(username);
     setCurrUser(user);
     await getCurrUserCountries(user);
   }
@@ -106,8 +103,8 @@ const ContextProvider = ({children}) => {
 
   //post call for a user to login
   async function login(username,password) {
-    let token = await JoblyApi.login(username, password);
-    let res = await JoblyApi.getInfo(username);
+    let token = await CountriesApi.login(username, password);
+    let res = await CountriesApi.getInfo(username);
     setToken(token);
     setCurrUser(res);
     await getCountries();
@@ -116,8 +113,8 @@ const ContextProvider = ({children}) => {
   }
   //post call for a user to register
   async function register(username, password, firstName, lastName, email) {
-    let token = await JoblyApi.register(username, password, firstName, lastName, email);
-    let res = await JoblyApi.getInfo(username);
+    let token = await CountriesApi.register(username, password, firstName, lastName, email);
+    let res = await CountriesApi.getInfo(username);
     setToken(token);
     setCurrUser(res);
     await getCountries();
@@ -127,14 +124,14 @@ const ContextProvider = ({children}) => {
   //update user's information
 
   async function update(username, firstName, lastName, email) {
-    let res = await JoblyApi.update(username, firstName, lastName, email);
-    let user = await JoblyApi.getInfo(username);
+    let res = await CountriesApi.update(username, firstName, lastName, email);
+    let user = await CountriesApi.getInfo(username);
     setCurrUser(user);
   }
 
   //logout
   async function logout() {
-    JoblyApi.logout()
+    CountriesApi.logout()
     setToken(false);
     setCurrUser({})
   }

@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import "../styles/Country.css";
 
-//Welcome page for the user when logged in
+//Section of the country page where the textual information is displayed, as well as the coat of arms
 function CountryInfo({country}) {
 
   return (

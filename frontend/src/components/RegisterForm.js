@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import { Button, Card, CardBody, Form, Label, Input, FormGroup, FormFeedback } from "reactstrap";
-import { Redirect, useHistory } from "react-router-dom";
+import { Button, Card, CardBody, Form, Label, Input, FormGroup } from "reactstrap";
+import { useHistory } from "react-router-dom";
 
 const RegisterForm = ({register}) => {
     const INITIAL_STATE = {

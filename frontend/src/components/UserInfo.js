@@ -4,7 +4,7 @@ import { Table } from "reactstrap";
 import "../styles/User.css"
 import ItemsContext from "./ItemsContext";
 
-//Welcome page for the user when logged in
+//Page that shows the logged in user's information
 function UserInfo() {
   const history = useHistory();
   const { getCountry, currUser, currUserCountries  } = useContext(ItemsContext);
