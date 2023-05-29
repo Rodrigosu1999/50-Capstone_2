@@ -46,6 +46,7 @@ function NavBar() {
               src={logo}
             />
           </NavbarBrand >
+          <span>Please use the pages buttons and logout when you finish</span>
           {token ? (
             <Nav className="ms-auto">
               <SearchCountryForm />

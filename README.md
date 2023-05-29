@@ -4,7 +4,7 @@ This website works with the popular API "RESTful Countries" for users to interac
 This was done because not all countries are known by everyone and this website will help people that like to know and explore the world find palces they would like to visit or know more about.  
 
 ### Deployed app  
-https://nyt-best-sellers-tracker.herokuapp.com/  
+https://culture-quests.surge.sh/
 
 ## Follow these instructions if you want to play with the code
 1. Clone the repository in your local machine

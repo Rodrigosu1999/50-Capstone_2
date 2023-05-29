@@ -133,7 +133,8 @@ const ContextProvider = ({children}) => {
   async function logout() {
     CountriesApi.logout()
     setToken(false);
-    setCurrUser({})
+    setCurrUser(false)
+    setCurrUserCountries(false)
   }
 
   return (
