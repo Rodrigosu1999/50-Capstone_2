@@ -88,7 +88,7 @@ const LoginForm = ({login}) => {
                                 />
                             )}
                         </FormGroup>
-                        <Button color="primary" >Login</Button>
+                        <Button color="primary" >Login!</Button>
                     </Form>
                 </CardBody>
             </Card>

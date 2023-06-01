@@ -22,8 +22,8 @@ function HomeAnon() {
             <h4>The place to find your next destination</h4>
             <h4>And learn about countries</h4>
           </CardSubtitle>
-          <Button color="primary" onClick={() => handleClick("/login")}>Login</Button>
-          <Button color="primary" onClick={() => handleClick("/register")}>Register</Button>
+          <Button color="primary" onClick={() => handleClick("/login")}>Login!</Button>
+          <Button color="primary" onClick={() => handleClick("/register")}>Register!</Button>
         </CardBody>
       </Card>
     </div>

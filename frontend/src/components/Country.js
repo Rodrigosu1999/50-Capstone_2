@@ -33,15 +33,6 @@ function Country() {
         <div className="Country">
         <h1 className="Country-name">{country.name}</h1>
         <img className="Country-flag" src={country.flag} />
-        <div className="Country-container">
-          <CountryInfo country={country}/>
-          {country.image1 !== "false"
-            ?
-            <CountryCarousel className="Country-carousel"/>
-            :
-            <></>
-          }
-        </div>
         {currUser.countries.includes(country.name) 
           ?
           <Button className="Country-button" size="lg" color="danger" onClick={() => handleClickRemove()}>
@@ -52,9 +43,17 @@ function Country() {
             Add to list!
           </Button>
         }
+        <div className="Country-container">
+          <CountryInfo country={country}/>
+          {country.image1 !== "false"
+            ?
+            <CountryCarousel className="Country-carousel"/>
+            :
+            <></>
+          }
+        </div>
       </div>
         }
-      
     </>
   );
 }

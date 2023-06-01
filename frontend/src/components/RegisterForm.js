@@ -99,7 +99,7 @@ const RegisterForm = ({register}) => {
                                     onChange={handleChange} 
                                 />
                         </FormGroup>
-                        <Button color="primary" >Register</Button>
+                        <Button color="primary" >Register!</Button>
                     </Form>
                 </CardBody>
             </Card>

@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div>
+      <nav
+        class="navbar navbar-expand-md"
+      >
+        <div
+          class="container-fluid"
+        >
+          <a
+            class="navbar-brand"
+          >
+            <img
+              alt="logo"
+              src="globe_logo.png"
+            />
+          </a>
+          <span>
+            Please use the pages buttons and logout when you finish
+          </span>
+          <ul
+            class="ms-auto nav"
+          >
+            <li
+              class="nav-item"
+            >
+              <a
+                href="/login"
+                id="nav-login"
+              >
+                Login
+              </a>
+            </li>
+            <li
+              class="nav-item"
+            >
+              <a
+                href="/register"
+                id="nav-register"
+              >
+                Register
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div
+        class="Welcome Welcome-Anon"
+      >
+        <div
+          class="Welcome-Anon-card card"
+        >
+          <div
+            class="text-center card-body"
+          >
+            <div
+              class="card-title"
+            >
+              <h3
+                class="font-weight-bold"
+              >
+                Culture Quests
+              </h3>
+            </div>
+            <div
+              class="card-subtitle"
+            >
+              <h4>
+                The place to find your next destination
+              </h4>
+              <h4>
+                And learn about countries
+              </h4>
+            </div>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Login!
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Register!
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</DocumentFragment>
+`;

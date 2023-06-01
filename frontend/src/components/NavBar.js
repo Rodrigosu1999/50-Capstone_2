@@ -117,10 +117,10 @@ function NavBar() {
           ) : (
             <Nav className="ms-auto">
             <NavItem>
-              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/login" id="nav-login">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/register">Register</NavLink>
+              <NavLink to="/register" id="nav-register">Register</NavLink>
             </NavItem>
           </Nav>
           )}
